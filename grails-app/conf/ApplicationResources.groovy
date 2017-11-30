@@ -6,7 +6,6 @@ modules = {
         dependsOn 'application'
         defaultBundle 'core'
 
-        resource url: '/js/lib/jquery-1.12.4.js',       disposition: 'head'
         resource url: '/js/lib/angular.js',             disposition: 'head'
     }
 
@@ -15,6 +14,22 @@ modules = {
         defaultBundle 'core'
 
         resource url: '/js/ng-app/app.js'
+    }
+
+    bootstrap {
+        defaultBundle 'bootstrap'
+
+        resource url: '/js/lib/jquery.min.js', disposition: 'head'
+        resource url: '/bootstrap-sb2-admin/css/bootstrap/bootstrap.min.css', disposition: 'head'
+        resource url: '/bootstrap-sb2-admin/css/fonts/font-awesome.min.css', disposition: 'head'
+        resource url: '/bootstrap-sb2-admin/css/metisMenu/metisMenu.min.css', disposition: 'head'
+        resource url: '/bootstrap-sb2-admin/css/sb2-admin/sb-admin-2.css', disposition: 'head'
+        resource url: '/bootstrap-sb2-admin/css/morris/morris.css', disposition: 'head'
+
+        resource url: '/bootstrap-sb2-admin/js/bootstrap/bootstrap.min.js'
+        resource url: '/bootstrap-sb2-admin/js/morris/morris.min.js'
+        resource url: '/bootstrap-sb2-admin/js/metisMenu/metisMenu.min.js'
+        resource url: '/bootstrap-sb2-admin/js/sb2-admin/sb-admin-2.js'
     }
 
     book {

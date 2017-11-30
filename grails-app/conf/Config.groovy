@@ -116,5 +116,5 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
-grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**']
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/bootstrap-sb2-admin/*']
+grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**', '/bootstrap-sb2-admin/**']
