@@ -6,7 +6,9 @@ modules = {
         dependsOn 'application'
         defaultBundle 'core'
 
-        resource url: '/js/lib/angular.js',             disposition: 'head'
+        resource url: '/js/lib/angular.js', disposition: 'head'
+        resource url: '/js/lib/angular-cookies.js'
+        resource url: '/js/lib/angular-route.js'
     }
 
     angular {
@@ -37,5 +39,12 @@ modules = {
 
         resource url: '/js/ng-app/book/bookService.js'
         resource url: '/js/ng-app/book/bookController.js'
+    }
+
+    auth {
+        dependsOn 'core'
+        defaultBundle 'auth'
+
+        resource url: '/js/ng-app/auth/auth-app.js'
     }
 }

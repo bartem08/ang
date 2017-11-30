@@ -118,3 +118,19 @@ log4j.main = {
 
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/bootstrap-sb2-admin/*']
 grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**', '/bootstrap-sb2-admin/**']
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.ang.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.ang.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.ang.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                ['ROLE_ADMIN'],
+	'/index':           ['ROLE_ADMIN'],
+	'/index.gsp':       ['ROLE_ADMIN'],
+	'/assets/**':       ['permitAll'],
+	'/**/js/**':        ['permitAll'],
+	'/**/css/**':       ['permitAll'],
+	'/**/images/**':    ['permitAll'],
+	'/**/favicon.ico':  ['permitAll']
+]
+

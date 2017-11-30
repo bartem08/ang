@@ -1,7 +1,9 @@
 package com.ang
 
 import grails.converters.JSON
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured('ROLE_ADMIN')
 class BookController {
 
     def getAllBooks() {
