@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-controller="bookController">
+<html >
 	<head>
 		<meta name="layout" content="main"/>
 		<title>Welcome to Grails</title>
@@ -7,15 +7,17 @@
 		<r:layoutResources/>
 	</head>
 	<body>
-		<table>
+		<table ng-controller="bookController">
 			<thead>
 				<tr>
+					<td>ID</td>
 					<td>Name</td>
 					<td>Genre</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="book in books">
+					<td>{{ book.id }}</td>
 					<td>{{ book.name }}</td>
 					<td>{{ book.genre }}</td>
 				</tr>
