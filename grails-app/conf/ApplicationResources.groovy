@@ -40,11 +40,4 @@ modules = {
         resource url: '/js/ng-app/book/bookService.js'
         resource url: '/js/ng-app/book/bookController.js'
     }
-
-    auth {
-        dependsOn 'core'
-        defaultBundle 'auth'
-
-        resource url: '/js/ng-app/auth/auth-app.js'
-    }
 }

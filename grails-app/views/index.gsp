@@ -228,7 +228,7 @@
 							<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 							</li>
 							<li class="divider"></li>
-							<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+							<li><a href="/j_spring_security_logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 							</li>
 						</ul>
 						<!-- /.dropdown-user -->
@@ -358,6 +358,8 @@
 								<th>id</th>
 								<th>Name</th>
 								<th>Genre</th>
+								<th>Author</th>
+								<th>Year</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -365,6 +367,8 @@
 								<td>{{ book.id }}</td>
 								<td>{{ book.name }}</td>
 								<td>{{ book.genre }}</td>
+								<td>{{ book.author.name }}</td>
+								<td>{{ book.year }}</td>
 							</tr>
 						</tbody>
 					</table>

@@ -1,19 +1,13 @@
-angular.module('ang')
-    .service('bookService', function ($http) {
-        return {
+angular.module('ang').service('bookService', [
+   '$http',
+   bookService
+]);
 
-            getAllBooks: function () {
-                return $http({
-                    method  : "GET",
-                    url     : "http://localhost:8080/ang/books/all"
-                })
-            },
+function bookService($http) {
 
-            getBookById: function (id) {
-                return $http({
-                    method  : "GET",
-                    url     : "http://localhost:8080/ang/books/" + id
-                })
-            }
+    return {
+        getAllBooks: function () {
+            return $http.get('/books/all');
         }
-    });
+    }
+}

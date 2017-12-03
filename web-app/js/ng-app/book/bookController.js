@@ -1,15 +1,12 @@
-angular.module('ang')
-    .controller('bookController', function ($scope, bookService) {
+angular.module('ang').controller('bookController', [
+    '$scope',
+    'bookService',
+    bookController
+]);
 
-        $scope.getAll = function () {
-            bookService.getAllBooks().then(function (response) {
-                $scope.books = response.data
-            });
-        };
+function bookController($scope, bookService) {
 
-        $scope.getById = function (id) {
-            bookService.getBookById(id).then(function (response) {
-                $scope.book = response.data
-            })
-        }
+    $scope.books = bookService.getAllBooks().then(function (response) {
+        $scope.books = response.data
     });
+}

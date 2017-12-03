@@ -124,13 +124,16 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.ang.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.ang.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.ang.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                ['ROLE_ADMIN'],
-	'/index':           ['ROLE_ADMIN'],
-	'/index.gsp':       ['ROLE_ADMIN'],
-	'/assets/**':       ['permitAll'],
-	'/**/js/**':        ['permitAll'],
-	'/**/css/**':       ['permitAll'],
-	'/**/images/**':    ['permitAll'],
-	'/**/favicon.ico':  ['permitAll']
+	'/':                              ['ROLE_ADMIN'],
+	'/index':                         ['ROLE_ADMIN'],
+	'/index.gsp':                     ['ROLE_ADMIN'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
 ]
 
+grails.plugin.springsecurity.rest.login.endpointUrl='/login'
+grails.plugin.springsecurity.rest.token.storage.jwt.expiration=60
+
+grails.app.context='/'

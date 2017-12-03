@@ -3,12 +3,12 @@
 <html lang="en">
 
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Angular test - Login</title>
+        <r:require module="bootstrap"/>
+        <r:layoutResources/>
     </head>
 
     <body>
@@ -20,13 +20,13 @@
                             <h3 class="panel-title">Please Sign In</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form" method='POST' action="${postUrl}" autocomplete='off'>
+                            <form action='${postUrl}' role="form" method='POST' autocomplete='off'>
                                 <fieldset>
                                     <div class="form-group">
-                                        <input ng-model="username" class="form-control" placeholder="Username" name='j_username' type="text" autofocus>
+                                        <input class="form-control" placeholder="Username" name='j_username' type="text" autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <input ng-model="password" class="form-control" placeholder="Password" name='j_password' type="password" value="">
+                                        <input class="form-control" placeholder="Password" name='j_password' type="password" value="">
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -41,6 +41,7 @@
                 </div>
             </div>
         </div>
+    <r:layoutResources/>
     </body>
 
 </html>

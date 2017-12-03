@@ -4,7 +4,8 @@ class Book {
 
     String name
     String genre
+    Short year
+    Author author
 
-    static constraints = {
-    }
+    static constraints = {}
 }
