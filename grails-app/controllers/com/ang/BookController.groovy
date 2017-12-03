@@ -24,4 +24,19 @@ class BookController {
     def getBookById(Long id) {
         render Book.get(id) as JSON
     }
+
+    def createBook(Book book) {
+
+        book.save()
+
+        render ([
+                id      : book.id,
+                name    : book.name,
+                genre   : book.genre,
+                author  : [
+                        id  : book.author.id,
+                        name: book.author.fullName
+                ]
+        ]) as JSON
+    }
 }

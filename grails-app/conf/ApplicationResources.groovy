@@ -40,4 +40,11 @@ modules = {
         resource url: '/js/ng-app/book/bookService.js'
         resource url: '/js/ng-app/book/bookController.js'
     }
+
+    author {
+        dependsOn 'angular'
+
+        resource url: '/js/ng-app/author/authorService.js'
+        resource url: '/js/ng-app/author/authorController.js'
+    }
 }

@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="layout" content="main">
 		<title>Test angular app</title>
-		<r:require modules="bootstrap, book"/>
+		<r:require modules="bootstrap, book, author"/>
 		<r:layoutResources/>
 	</head>
 	<body>
@@ -252,16 +252,16 @@
 								<!-- /input-group -->
 							</li>
 							<li>
-								<a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+								<a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
 							</li>
 							<li>
-								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Books<span class="fa arrow"></span></a>
 								<ul class="nav nav-second-level">
 									<li>
-										<a href="flot.html">Flot Charts</a>
+										<a href="#/books/list">Book list</a>
 									</li>
 									<li>
-										<a href="morris.html">Morris.js Charts</a>
+										<a href="#/books/create">Create book</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->
@@ -351,27 +351,8 @@
 						<h1 class="page-header">Dashboard</h1>
 					</div>
 				</div>
-				<div class="panel-body" ng-controller="bookController">
-					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-						<thead>
-							<tr>
-								<th>id</th>
-								<th>Name</th>
-								<th>Genre</th>
-								<th>Author</th>
-								<th>Year</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="book in books">
-								<td>{{ book.id }}</td>
-								<td>{{ book.name }}</td>
-								<td>{{ book.genre }}</td>
-								<td>{{ book.author.name }}</td>
-								<td>{{ book.year }}</td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="panel-body">
+					<ng-view></ng-view>
 				</div>
 			</div>
 		</div>

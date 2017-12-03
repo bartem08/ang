@@ -17,5 +17,17 @@ class UrlMappings {
         "/books/$id"(controller: 'book') {
             action = [GET: 'getBookById']
         }
+
+        "/books/create"(controller: 'book') {
+            action = [POST: 'createBook']
+        }
+
+        "/authors/all"(controller: 'author') {
+            action = [GET: 'getAllAuthors']
+        }
+
+        "/authors/$id"(controller: 'author') {
+            action = [GET: 'getById']
+        }
 	}
 }

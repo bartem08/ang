@@ -1,0 +1,26 @@
+<form ng-controller="bookController" ng-submit="createBook()">
+    <div class="form-group">
+        <label>Name:</label>
+        <input ng-model="name" class="form-control" placeholder="Enter book name">
+    </div>
+
+    <div class="form-group">
+        <label>Genre:</label>
+        <input ng-model="genre" class="form-control" placeholder="Enter book genre">
+    </div>
+
+    <div class="form-group">
+        <label>Year:</label>
+        <input ng-model="year" class="form-control" placeholder="Enter book year">
+    </div>
+
+    <div ng-controller="authorController" class="form-group">
+        <label>Author</label>
+        <select class="form-control" ng-model="authorId" >
+            <option ng-repeat="author in allAuthors" value="{{ author.id }}">{{ author.name }}</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Add book</button>
+
+</form>

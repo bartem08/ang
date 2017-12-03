@@ -127,13 +127,11 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['ROLE_ADMIN'],
 	'/index':                         ['ROLE_ADMIN'],
 	'/index.gsp':                     ['ROLE_ADMIN'],
+    '/views/**':                      ['ROLE_ADMIN'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
-
-grails.plugin.springsecurity.rest.login.endpointUrl='/login'
-grails.plugin.springsecurity.rest.token.storage.jwt.expiration=60
 
 grails.app.context='/'

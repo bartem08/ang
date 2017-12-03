@@ -8,4 +8,8 @@ class Author {
     static hasMany = [books: Book]
 
     static constraints = {}
+
+    String getFullName() {
+        "$name $surname"
+    }
 }

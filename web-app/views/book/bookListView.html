@@ -1,0 +1,20 @@
+<table ng-controller="bookController" width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Author</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="book in books">
+            <td ng-click="getById(book.id)">{{ book.id }}</td>
+            <td>{{ book.name }}</td>
+            <td>{{ book.genre }}</td>
+            <td>{{ book.author.name }}</td>
+            <td>{{ book.year }}</td>
+        </tr>
+    </tbody>
+</table>
