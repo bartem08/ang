@@ -14,15 +14,20 @@ function bookService($http) {
             return $http.get('/books/' + id);
         },
 
-        createBook: function (name, genre, year, author) {
-            return $http.post('/books/create', {
-                name    : name,
-                genre   : genre,
-                year    : year,
+        createBook: function (scopeObject) {
+            var bookJson = this._createBookObject(scopeObject);
+            return $http.post('/books/create', bookJson)
+        },
+
+        _createBookObject: function (scopeObject) {
+            return {
+                name    : scopeObject.name,
+                genre   : scopeObject.genre,
+                year    : scopeObject.year,
                 author  : {
-                    id : author.id
+                    id : scopeObject.authorId
                 }
-            })
+            }
         }
     }
 }

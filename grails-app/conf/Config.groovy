@@ -127,7 +127,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['ROLE_ADMIN'],
 	'/index':                         ['ROLE_ADMIN'],
 	'/index.gsp':                     ['ROLE_ADMIN'],
-    '/views/**':                      ['ROLE_ADMIN'],
+    '/templates/**':                  ['ROLE_ADMIN'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],

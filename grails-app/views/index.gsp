@@ -258,10 +258,10 @@
 								<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Books<span class="fa arrow"></span></a>
 								<ul class="nav nav-second-level">
 									<li>
-										<a href="#/books/list">Book list</a>
+										<a href="#/book/list">Book list</a>
 									</li>
 									<li>
-										<a href="#/books/create">Create book</a>
+										<a href="#/book/create">Create book</a>
 									</li>
 								</ul>
 								<!-- /.nav-second-level -->

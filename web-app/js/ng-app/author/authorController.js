@@ -5,6 +5,7 @@ angular.module('ang').controller('authorController', [
 ]);
 
 function authorController($scope, authorService) {
+
     authorService.findAllAuthors().then(function (response) {
         $scope.allAuthors = response.data;
     })

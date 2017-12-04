@@ -12,19 +12,16 @@ function bookController($scope, $location, bookService) {
     });
 
     $scope.createBook = function () {
-        var author = {
-            id: $scope.authorId
-        };
-        bookService.createBook($scope.name, $scope.genre, $scope.year, author)
-            .then(function (response) {
-                $scope.book = response.data;
-                $location.path('/book/' + response.data.id);
-            })
+        bookService.createBook($scope).then(function () {
+            $location.path('book/list');
+        })
     };
 
     $scope.getBook = function (id) {
+        var responseData = {};
         bookService.getBookById(id).then(function (response) {
-            $scope.book = response.data
-        })
-    }
+            responseData = response.data
+        });
+        return responseData;
+    };
 }

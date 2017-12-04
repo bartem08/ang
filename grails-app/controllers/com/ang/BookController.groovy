@@ -7,18 +7,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class BookController {
 
     def getAllBooks() {
-        render Book.findAll().collect {
-            [
-                    id      : it.id,
-                    name    : it.name,
-                    genre   : it.genre,
-                    author  : [
-                            id  : it.author.id,
-                            name: "${it.author.name} ${it.author.surname}"
-                    ],
-                    year    : it.year
-            ]
-        } as JSON
+        render Book.findAll().collect { it.toMap() } as JSON
     }
 
     def getBookById(Long id) {
@@ -26,17 +15,6 @@ class BookController {
     }
 
     def createBook(Book book) {
-
-        book.save()
-
-        render ([
-                id      : book.id,
-                name    : book.name,
-                genre   : book.genre,
-                author  : [
-                        id  : book.author.id,
-                        name: book.author.fullName
-                ]
-        ]) as JSON
+        render book.save().toMap() as JSON
     }
 }
