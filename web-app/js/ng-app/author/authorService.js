@@ -7,7 +7,7 @@ function authorService($http) {
 
     return {
         findAllAuthors: function () {
-            return $http.get('/authors/all');
+            return $http.get('/authors');
         }
     };
 }

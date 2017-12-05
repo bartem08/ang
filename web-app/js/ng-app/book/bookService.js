@@ -7,7 +7,7 @@ function bookService($http) {
 
     return {
         getAllBooks: function () {
-            return $http.get('/books/all');
+            return $http.get('/books');
         },
 
         getBookById: function (id) {
@@ -16,7 +16,11 @@ function bookService($http) {
 
         createBook: function (scopeObject) {
             var bookJson = this._createBookObject(scopeObject);
-            return $http.post('/books/create', bookJson)
+            return $http.post('/books', bookJson);
+        },
+
+        deleteBook: function (id) {
+            return $http.delete('/books/' + id);
         },
 
         _createBookObject: function (scopeObject) {

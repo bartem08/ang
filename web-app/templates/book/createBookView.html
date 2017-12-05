@@ -1,4 +1,4 @@
-<form ng-submit="createBook()">
+<form ng-submit="createNewBook()">
 
     <div class="form-group">
         <label>Name:</label>
@@ -18,7 +18,7 @@
     <div ng-controller="authorController" class="form-group">
         <label>Author</label>
         <select class="form-control" ng-model="$parent.authorId" >
-            <option ng-repeat="author in allAuthors" value="{{ author.id }}">{{ author.name }}</option>
+            <option ng-repeat="author in authors" value="{{ author.id }}">{{ author.name }}</option>
         </select>
     </div>
 

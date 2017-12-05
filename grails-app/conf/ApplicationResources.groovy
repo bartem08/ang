@@ -39,6 +39,8 @@ modules = {
 
         resource url: '/js/ng-app/book/bookService.js'
         resource url: '/js/ng-app/book/bookController.js'
+        resource url: '/js/ng-app/book/createBookController.js'
+        resource url: '/js/ng-app/book/bookDetailsController.js'
     }
 
     author {

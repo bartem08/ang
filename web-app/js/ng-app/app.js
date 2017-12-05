@@ -2,14 +2,17 @@
 
 angular.module('ang', ['ngRoute'])
     .config(function ($routeProvider) {
-        $routeProvider.when('/book/create', {
+        $routeProvider
+            .when('/book/create', {
                 templateUrl : '/templates/book/createBookView.html',
-                controller  : 'bookController'
-            }).when('/book/list', {
+                controller  : 'createBookController'
+            })
+            .when('/book/list', {
                 templateUrl : '/templates/book/bookListView.html',
                 controller  : 'bookController'
-            }).when('/book/:id', {
+            })
+            .when('/book/:id', {
                 templateUrl : '/templates/book/bookView.html',
-                controller  : 'bookController'
+                controller  : 'bookDetailsController'
             })
         });

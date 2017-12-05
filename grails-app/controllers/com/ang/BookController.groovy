@@ -11,10 +11,15 @@ class BookController {
     }
 
     def getBookById(Long id) {
-        render Book.get(id) as JSON
+        render Book.get(id).toMap() as JSON
     }
 
     def createBook(Book book) {
         render book.save().toMap() as JSON
+    }
+
+    def deleteBook(Long id) {
+        Book.findById(id).delete(flush: true)
+        render [:] as JSON
     }
 }

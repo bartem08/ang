@@ -6,6 +6,7 @@
             <th>Genre</th>
             <th>Author</th>
             <th>Year</th>
+            <th style="width: 5%">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,11 @@
             <td>{{ book.genre }}</td>
             <td>{{ book.author.name }}</td>
             <td>{{ book.year }}</td>
+            <td style="text-align: center">
+                <button ng-click="deleteBook(book.id)" type="button" class="btn btn-warning btn-circle">
+                    <i class="fa fa-times"></i>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>
