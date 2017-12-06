@@ -1,17 +1,29 @@
 angular.module('ang').controller('bookController', [
-    '$scope',
     '$route',
     'bookService',
     bookController
 ]);
 
-function bookController($scope, $route, bookService) {
+function bookController($route, bookService) {
+    var vm = this;
+    vm.reverse = false;
 
     bookService.getAllBooks().then(function (response) {
-        $scope.books = response.data
+        vm.books = response.data
     });
 
-    $scope.deleteBook = function (id) {
+    vm.changeSort = function (field) {
+        if (vm.shouldOrderBy(field)) {
+            vm.reverse = !vm.reverse;
+        }
+        vm.sort = field;
+    };
+
+    vm.shouldOrderBy = function (field) {
+        return field === vm.sort
+    };
+
+    vm.deleteBook = function (id) {
         bookService.deleteBook(id).then(function () {
             $route.reload();
         })

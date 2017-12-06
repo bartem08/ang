@@ -9,7 +9,7 @@ angular.module('ang', ['ngRoute'])
             })
             .when('/book/list', {
                 templateUrl : '/templates/book/bookListView.html',
-                controller  : 'bookController'
+                controller  : 'bookController as bC'
             })
             .when('/book/:id', {
                 templateUrl : '/templates/book/bookView.html',
