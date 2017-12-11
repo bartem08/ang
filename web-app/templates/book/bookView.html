@@ -3,7 +3,7 @@
         {{ book.name }}, {{ book.year }}
     </div>
     <div class="panel-body">
-        <p>{{ book.genre }}</p>
+        <p>{{ book.genre }}, {{ book.year | century }} century</p>
     </div>
     <div class="panel-footer">
         {{ book.author.name }}
