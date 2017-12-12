@@ -9,5 +9,27 @@ class UrlMappings {
 
         "/"(view:"/index")
         "500"(view:'/error')
+
+        "/books"(controller: 'book') {
+            action = [
+                    GET: 'getAllBooks',
+                    POST: 'createBook'
+            ]
+        }
+
+        "/books/$id"(controller: 'book') {
+            action = [
+                    GET: 'getBookById',
+                    DELETE: 'deleteBook'
+            ]
+        }
+
+        "/authors"(controller: 'author') {
+            action = [GET: 'getAllAuthors']
+        }
+
+        "/authors/$id"(controller: 'author') {
+            action = [GET: 'getById']
+        }
 	}
 }
