@@ -2,34 +2,34 @@
        id="dataTables-example">
   <thead>
   <tr style="cursor: pointer">
-    <th ng-click="bC.changeSort('id')">Id
-      <span ng-show="bC.shouldOrderBy('id') && bC.reverse"
+    <th ng-click="bookCtrl.changeSort('id')">Id
+      <span ng-show="bookCtrl.shouldOrderBy('id') && bookCtrl.reverse"
             class="glyphicon glyphicon-menu-up" style="float: right;"></span>
-      <span ng-show="bC.shouldOrderBy('id') && !bC.reverse"
+      <span ng-show="bookCtrl.shouldOrderBy('id') && !bookCtrl.reverse"
             class="glyphicon glyphicon-menu-down" style="float: right;"></span>
     </th>
-    <th ng-click="bC.changeSort('name')">Name
-      <span ng-show="bC.shouldOrderBy('name') && bC.reverse"
+    <th ng-click="bookCtrl.changeSort('name')">Name
+      <span ng-show="bookCtrl.shouldOrderBy('name') && bookCtrl.reverse"
             class="glyphicon glyphicon-menu-up" style="float: right;"></span>
-      <span ng-show="bC.shouldOrderBy('name') && !bC.reverse"
+      <span ng-show="bookCtrl.shouldOrderBy('name') && !bookCtrl.reverse"
             class="glyphicon glyphicon-menu-down" style="float: right;"></span>
     </th>
-    <th ng-click="bC.changeSort('genre')">Genre
-      <span ng-show="bC.shouldOrderBy('genre') && bC.reverse"
+    <th ng-click="bookCtrl.changeSort('genre')">Genre
+      <span ng-show="bookCtrl.shouldOrderBy('genre') && bookCtrl.reverse"
             class="glyphicon glyphicon-menu-up" style="float: right;"></span>
-      <span ng-show="bC.shouldOrderBy('genre') && !bC.reverse"
+      <span ng-show="bookCtrl.shouldOrderBy('genre') && !bookCtrl.reverse"
             class="glyphicon glyphicon-menu-down" style="float: right;"></span>
     </th>
-    <th ng-click="bC.changeSort('author')">Author
-      <span ng-show="bC.shouldOrderBy('author') && bC.reverse"
+    <th ng-click="bookCtrl.changeSort('author')">Author
+      <span ng-show="bookCtrl.shouldOrderBy('author') && bookCtrl.reverse"
             class="glyphicon glyphicon-menu-up" style="float: right;"></span>
-      <span ng-show="bC.shouldOrderBy('author') && !bC.reverse"
+      <span ng-show="bookCtrl.shouldOrderBy('author') && !bookCtrl.reverse"
             class="glyphicon glyphicon-menu-down" style="float: right;"></span>
     </th>
-    <th ng-click="bC.changeSort('year')">Year
-      <span ng-show="bC.shouldOrderBy('year') && bC.reverse"
+    <th ng-click="bookCtrl.changeSort('year')">Year
+      <span ng-show="bookCtrl.shouldOrderBy('year') && bookCtrl.reverse"
             class="glyphicon glyphicon-menu-up" style="float: right;"></span>
-      <span ng-show="bC.shouldOrderBy('year') && !bC.reverse"
+      <span ng-show="bookCtrl.shouldOrderBy('year') && !bookCtrl.reverse"
             class="glyphicon glyphicon-menu-down" style="float: right;"></span>
     </th>
     <th style="width: 5%">Action</th>
@@ -37,8 +37,8 @@
   </thead>
   <tbody>
   <tr ng-repeat="
-        book in bC.books |
-        orderBy: bC.sort: bC.reverse |
+        book in bookCtrl.books |
+        orderBy: bookCtrl.sort: bookCtrl.reverse |
         filter: searchText">
     <td><a href="#/book/{{ book.id }}">{{ book.id }}</a></td>
     <td>{{ book.name }}</td>
@@ -46,7 +46,7 @@
     <td>{{ book.author.name }}</td>
     <td>{{ book.year }}</td>
     <td style="text-align: center">
-      <button ng-click="bC.deleteBook(book.id)" type="button"
+      <button ng-click="bookCtrl.deleteBook(book.id)" type="button"
               class="btn btn-warning btn-circle">
         <i class="fa fa-times"></i>
       </button>

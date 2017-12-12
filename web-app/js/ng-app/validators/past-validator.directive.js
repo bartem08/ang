@@ -1,8 +1,8 @@
 angular.module('ang').directive('past', [
-    pastValidator
+    PastValidator
 ]);
 
-function pastValidator() {
+function PastValidator() {
 
     return {
         require : 'ngModel',
