@@ -1,10 +1,10 @@
-angular.module('ang').controller('bookController', [
+angular.module('ang').controller('BookController', [
     '$route',
     'bookService',
-    bookController
+    BookController
 ]);
 
-function bookController($route, bookService) {
+function BookController($route, bookService) {
     var vm = this;
     vm.reverse = false;
 

@@ -1,80 +1,82 @@
 <form name="createBookForm" ng-submit="createNewBook()">
 
-    <div class="form-group">
-        <label>Name:</label>
-        <div style="display: flex">
-            <input required ng-minlength="3" ng-model="name"
-                   name="name"
-                   style="width: 90%;"
-                   class="form-control"
-                   placeholder="Enter book name"/>
-            <span ng-show="createBookForm.name.$valid"
-                  style="color: #5cb85c; float: right; margin: auto"
-                  class="glyphicon glyphicon-ok"></span>
-            <p ng-show="createBookForm.name.$invalid"
-                style="color: #f0ad4e; float: right; margin: auto"
-                class="fa fa-warning"></p>
-        </div>
+  <div class="form-group">
+    <label>Name:</label>
+    <div style="display: flex">
+      <input required ng-minlength="3" ng-model="name"
+             name="name"
+             style="width: 90%;"
+             class="form-control"
+             placeholder="Enter book name"/>
+      <span ng-show="createBookForm.name.$valid"
+            style="color: #5cb85c; float: right; margin: auto"
+            class="glyphicon glyphicon-ok"></span>
+      <p ng-show="createBookForm.name.$invalid"
+         style="color: #f0ad4e; float: right; margin: auto"
+         class="fa fa-warning"></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Genre:</label>
+    <div style="display: flex">
+      <input required ng-minlength="3" ng-model="genre"
+             name="genre"
+             style="width: 90%;"
+             class="form-control"
+             placeholder="Enter book genre"/>
+      <span ng-show="createBookForm.genre.$valid"
+            style="color: #5cb85c; float: right; margin: auto"
+            class="glyphicon glyphicon-ok"></span>
+      <p ng-show="createBookForm.genre.$invalid"
+         style="color: #f0ad4e; float: right; margin: auto"
+         class="fa fa-warning"></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Year:</label>
+    <div style="display: flex">
+      <input required past ng-model="year"
+             name="year"
+             type="number"
+             style="width: 90%;"
+             class="form-control"
+             placeholder="Enter book year"/>
+      <span ng-show="createBookForm.year.$valid"
+            style="color: #5cb85c; float: right; margin: auto"
+            class="glyphicon glyphicon-ok"></span>
+      <p ng-show="createBookForm.year.$invalid"
+         style="color: #f0ad4e; float: right; margin: auto"
+         class="fa fa-warning"></p>
     </div>
 
-    <div class="form-group">
-        <label>Genre:</label>
-        <div style="display: flex">
-            <input required ng-minlength="3" ng-model="genre"
-                   name="genre"
-                   style="width: 90%;"
-                   class="form-control"
-                   placeholder="Enter book genre"/>
-            <span ng-show="createBookForm.genre.$valid"
-                  style="color: #5cb85c; float: right; margin: auto"
-                  class="glyphicon glyphicon-ok"></span>
-            <p ng-show="createBookForm.genre.$invalid"
-               style="color: #f0ad4e; float: right; margin: auto"
-               class="fa fa-warning"></p>
-        </div>
+  </div>
+
+  <div ng-controller="authorController" class="form-group">
+    <label>Author</label>
+    <div style="display: flex">
+      <select required ng-model="$parent.authorId"
+              name="authorId"
+              style="width: 90%;"
+              class="form-control">
+        <option ng-repeat="author in authors"
+                value="{{ author.id }}">{{ author.name }}
+        </option>
+      </select>
+      <span ng-show="createBookForm.authorId.$valid"
+            style="color: #5cb85c; float: right; margin: auto"
+            class="glyphicon glyphicon-ok"></span>
+      <p ng-show="createBookForm.authorId.$invalid"
+         style="color: #f0ad4e; float: right; margin: auto"
+         class="fa fa-warning"></p>
     </div>
 
-    <div class="form-group">
-        <label>Year:</label>
-        <div style="display: flex">
-            <input required past ng-model="year"
-                   name="year"
-                   type="number"
-                   style="width: 90%;"
-                   class="form-control"
-                   placeholder="Enter book year"/>
-            <span ng-show="createBookForm.year.$valid"
-                  style="color: #5cb85c; float: right; margin: auto"
-                  class="glyphicon glyphicon-ok"></span>
-            <p ng-show="createBookForm.year.$invalid"
-               style="color: #f0ad4e; float: right; margin: auto"
-               class="fa fa-warning"></p>
-        </div>
-
-    </div>
-
-    <div ng-controller="authorController" class="form-group">
-        <label>Author</label>
-        <div style="display: flex">
-            <select required ng-model="$parent.authorId"
-                    name="authorId"
-                    style="width: 90%;"
-                    class="form-control">
-                <option ng-repeat="author in authors"
-                        value="{{ author.id }}">{{ author.name }}</option>
-            </select>
-            <span ng-show="createBookForm.authorId.$valid"
-                  style="color: #5cb85c; float: right; margin: auto"
-                  class="glyphicon glyphicon-ok"></span>
-            <p ng-show="createBookForm.authorId.$invalid"
-               style="color: #f0ad4e; float: right; margin: auto"
-               class="fa fa-warning"></p>
-        </div>
-
-    </div>
-    <button ng-disabled="createBookForm.$invalid"
-            style="width: 90%;"
-            type="submit"
-            class="btn btn-primary btn-lg btn-block">Add book</button>
+  </div>
+  <button ng-disabled="createBookForm.$invalid"
+          style="width: 90%;"
+          type="submit"
+          class="btn btn-primary btn-lg btn-block">Add book
+  </button>
 
 </form>
