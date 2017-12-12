@@ -1,14 +1,14 @@
 angular.module('ang').controller('CreateBookController', [
-    '$scope',
     '$location',
     'BookService',
     CreateBookController
 ]);
 
-function CreateBookController($scope, $location, BookService) {
+function CreateBookController($location, BookService) {
+    var vm = this;
 
-    $scope.createNewBook = function() {
-        BookService.createBook($scope).then(function () {
+    vm.createNewBook = function() {
+        BookService.createBook(vm).then(function () {
             $location.path('book/list');
         });
     };

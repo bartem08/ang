@@ -1,9 +1,9 @@
-<form name="createBookForm" ng-submit="createNewBook()">
+<form name="createBookForm" ng-submit="createBookCtrl.createNewBook()">
 
   <div class="form-group">
     <label>Name:</label>
     <div style="display: flex">
-      <input required ng-minlength="3" ng-model="name"
+      <input required ng-minlength="3" ng-model="createBookCtrl.name"
              name="name"
              style="width: 90%;"
              class="form-control"
@@ -20,7 +20,7 @@
   <div class="form-group">
     <label>Genre:</label>
     <div style="display: flex">
-      <input required ng-minlength="3" ng-model="genre"
+      <input required ng-minlength="3" ng-model="createBookCtrl.genre"
              name="genre"
              style="width: 90%;"
              class="form-control"
@@ -37,7 +37,7 @@
   <div class="form-group">
     <label>Year:</label>
     <div style="display: flex">
-      <input required past ng-model="year"
+      <input required past ng-model="createBookCtrl.year"
              name="year"
              type="number"
              style="width: 90%;"
@@ -53,14 +53,14 @@
 
   </div>
 
-  <div ng-controller="AuthorController" class="form-group">
+  <div ng-controller="AuthorController as authorCtrl" class="form-group">
     <label>Author</label>
     <div style="display: flex">
-      <select required ng-model="$parent.authorId"
+      <select required ng-model="createBookCtrl.authorId"
               name="authorId"
               style="width: 90%;"
               class="form-control">
-        <option ng-repeat="author in authors"
+        <option ng-repeat="author in authorCtrl.authors"
                 value="{{ author.id }}">{{ author.name }}
         </option>
       </select>

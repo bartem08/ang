@@ -3,7 +3,7 @@ angular.module('ang')
         $routeProvider
             .when('/book/create', {
                 templateUrl : '/templates/book/create-book.tmpl.html',
-                controller  : 'CreateBookController'
+                controller  : 'CreateBookController as createBookCtrl'
             })
             .when('/book/list', {
                 templateUrl : '/templates/book/book-list.tmpl.html',
@@ -11,7 +11,7 @@ angular.module('ang')
             })
             .when('/book/:id', {
                 templateUrl : '/templates/book/book.tmpl.html',
-                controller  : 'BookDetailsController'
+                controller  : 'BookDetailsController as bookDetailsCtrl'
             })
             .otherwise('/');
     });
