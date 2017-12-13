@@ -7,6 +7,7 @@ modules = {
         defaultBundle 'core'
 
         resource url: '/js/lib/angular.js', disposition: 'head'
+        resource url: '/css/general.css', disposition: 'head'
         resource url: '/js/lib/angular-cookies.js'
         resource url: '/js/lib/angular-route.js'
     }

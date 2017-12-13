@@ -2,81 +2,68 @@
 
   <div class="form-group">
     <label>Name:</label>
-    <div style="display: flex">
+    <div class="ang-flex">
       <input required ng-minlength="3" ng-model="createBookCtrl.name"
              name="name"
-             style="width: 90%;"
-             class="form-control"
-             placeholder="Enter book name"/>
+             class="ang-input form-control"
+             placeholder="{{createBookCtrl.INPUT_PLACEHOLDERS.bookName}}"/>
       <span ng-show="createBookForm.name.$valid"
-            style="color: #5cb85c; float: right; margin: auto"
-            class="glyphicon glyphicon-ok"></span>
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.name.$invalid"
-         style="color: #f0ad4e; float: right; margin: auto"
-         class="fa fa-warning"></p>
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
     </div>
   </div>
 
   <div class="form-group">
     <label>Genre:</label>
-    <div style="display: flex">
-      <input required ng-minlength="3" ng-model="createBookCtrl.genre"
+    <div class="ang-flex">
+      <input required ng-minlength="createBookCtrl.MIN_NAME_FIELD_LENGTH" ng-model="createBookCtrl.genre"
              name="genre"
-             style="width: 90%;"
-             class="form-control"
-             placeholder="Enter book genre"/>
+             class="ang-input form-control"
+             placeholder="{{ createBookCtrl.INPUT_PLACEHOLDERS.bookGenre }}"/>
       <span ng-show="createBookForm.genre.$valid"
-            style="color: #5cb85c; float: right; margin: auto"
-            class="glyphicon glyphicon-ok"></span>
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.genre.$invalid"
-         style="color: #f0ad4e; float: right; margin: auto"
-         class="fa fa-warning"></p>
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
     </div>
   </div>
 
   <div class="form-group">
     <label>Year:</label>
-    <div style="display: flex">
+    <div class="ang-flex">
       <input required past ng-model="createBookCtrl.year"
              name="year"
              type="number"
-             style="width: 90%;"
-             class="form-control"
-             placeholder="Enter book year"/>
+             class="ang-input form-control"
+             placeholder="{{ createBookCtrl.INPUT_PLACEHOLDERS.bookYear }}"/>
       <span ng-show="createBookForm.year.$valid"
-            style="color: #5cb85c; float: right; margin: auto"
-            class="glyphicon glyphicon-ok"></span>
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.year.$invalid"
-         style="color: #f0ad4e; float: right; margin: auto"
-         class="fa fa-warning"></p>
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
     </div>
 
   </div>
 
   <div ng-controller="AuthorController as authorCtrl" class="form-group">
     <label>Author</label>
-    <div style="display: flex">
+    <div class="ang-flex">
       <select required ng-model="createBookCtrl.authorId"
               name="authorId"
-              style="width: 90%;"
-              class="form-control">
+              class="ang-input form-control">
         <option ng-repeat="author in authorCtrl.authors"
                 value="{{ author.id }}">{{ author.name }}
         </option>
       </select>
       <span ng-show="createBookForm.authorId.$valid"
-            style="color: #5cb85c; float: right; margin: auto"
-            class="glyphicon glyphicon-ok"></span>
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.authorId.$invalid"
-         style="color: #f0ad4e; float: right; margin: auto"
-         class="fa fa-warning"></p>
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
     </div>
 
   </div>
   <button ng-disabled="createBookForm.$invalid"
-          style="width: 90%;"
           type="submit"
-          class="btn btn-primary btn-lg btn-block">Add book
+          class="ang-input btn btn-primary btn-lg btn-block">Add book
   </button>
 
 </form>
