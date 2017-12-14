@@ -43,24 +43,7 @@
     </div>
 
   </div>
-
-  <div ng-controller="AuthorController as authorCtrl" class="form-group">
-    <label>Author</label>
-    <div class="ang-flex">
-      <select required ng-model="createBookCtrl.authorId"
-              name="authorId"
-              class="ang-input form-control">
-        <option ng-repeat="author in authorCtrl.authors"
-                value="{{ author.id }}">{{ author.name }}
-        </option>
-      </select>
-      <span ng-show="createBookForm.authorId.$valid"
-            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
-      <p ng-show="createBookForm.authorId.$invalid"
-         class="pull-right fa fa-warning ang-invalid-icon"></p>
-    </div>
-
-  </div>
+  <ang-author></ang-author>
   <button ng-disabled="createBookForm.$invalid"
           type="submit"
           class="ang-input btn btn-primary btn-lg btn-block">Add book

@@ -52,5 +52,6 @@ modules = {
 
         resource url: '/js/ng-app/author/author.service.js'
         resource url: '/js/ng-app/author/author.controller.js'
+        resource url: '/js/ng-app/author/author.directive.js'
     }
 }

@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label>Author</label>
+  <div class="ang-flex">
+    <select required ng-model="authorCtrl.authorId"
+            name="authorId"
+            class="ang-input form-control">
+      <option ng-repeat="author in authorCtrl.authors"
+              value="{{ author.id }}">{{ author.name }}
+      </option>
+    </select>
+    <span ng-show="createBookForm.authorId.$valid"
+          class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
+    <p ng-show="createBookForm.authorId.$invalid"
+       class="pull-right fa fa-warning ang-invalid-icon"></p>
+  </div>
+</div>
