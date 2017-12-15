@@ -19,14 +19,12 @@ function BookService($http) {
         return $http.post('/books', bookJson);
     }
 
-    function _createBookObject(scopeObject) {
+    function _createBookObject(bookToCreate) {
         return {
-            name    : scopeObject.name,
-            genre   : scopeObject.genre,
-            year    : scopeObject.year,
-            author  : {
-                id : scopeObject.authorId
-            }
+            name    : bookToCreate.name,
+            genre   : bookToCreate.genre,
+            year    : bookToCreate.year,
+            author  : bookToCreate.author
         };
     }
 
