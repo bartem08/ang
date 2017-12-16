@@ -1,13 +1,13 @@
 angular.module('ang').controller('BookDetailsController', [
-   '$routeParams',
+   '$stateParams',
    'BookService',
    BookDetailsController
 ]);
 
-function BookDetailsController($routeParams, BookService) {
+function BookDetailsController($stateParams, BookService) {
     var vm = this;
 
-    BookService.getBookById($routeParams.id).then(function (response) {
+    BookService.getBookById($stateParams.id).then(function (response) {
         vm.book = response.data;
     });
 }

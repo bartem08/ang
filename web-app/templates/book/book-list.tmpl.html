@@ -1,7 +1,7 @@
 <table width="100%" class="table table-striped table-bordered table-hover"
        id="dataTables-example">
   <thead>
-  <tr class="pointer">
+  <tr class="ang-pointer">
     <th ng-click="bookCtrl.changeSort('id')">Id
       <span ng-show="bookCtrl.shouldOrderBy('id') && bookCtrl.reverse"
             class="pull-right glyphicon glyphicon-menu-up"></span>
@@ -32,7 +32,7 @@
       <span ng-show="bookCtrl.shouldOrderBy('year') && !bookCtrl.reverse"
             class="pull-right glyphicon glyphicon-menu-down"></span>
     </th>
-    <th class="small-column">Action</th>
+    <th class="ang-small-column">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -40,7 +40,7 @@
         book in bookCtrl.books |
         orderBy: bookCtrl.sort: bookCtrl.reverse |
         filter: searchText">
-    <td><a href="#/book/{{ book.id }}">{{ book.id }}</a></td>
+    <td><a ui-sref="bookDetails({ id: book.id })">{{ book.id }}</a></td>
     <td>{{ ::book.name }}</td>
     <td>{{ ::book.genre }}</td>
     <td>{{ ::book.author.name }}</td>

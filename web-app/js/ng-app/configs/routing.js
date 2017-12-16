@@ -1,17 +1,23 @@
 angular.module('ang')
-    .config(function ($routeProvider) {
-        $routeProvider
-            .when('/book/create', {
-                templateUrl : '/templates/book/create-book.tmpl.html',
-                controller  : 'CreateBookController as createBookCtrl'
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('bookCreate', {
+                url          : '/book/create',
+                templateUrl  : '/templates/book/create-book.tmpl.html',
+                controller   : 'CreateBookController',
+                controllerAs : 'createBookCtrl'
             })
-            .when('/book/list', {
-                templateUrl : '/templates/book/book-list.tmpl.html',
-                controller  : 'BookController as bookCtrl'
+            .state('bookList', {
+                url          : '/book/list',
+                templateUrl  : '/templates/book/book-list.tmpl.html',
+                controller   : 'BookController',
+                controllerAs : 'bookCtrl'
             })
-            .when('/book/:id', {
-                templateUrl : '/templates/book/book.tmpl.html',
-                controller  : 'BookDetailsController as bookDetailsCtrl'
-            })
-            .otherwise('/');
+            .state('bookDetails', {
+                url          : '/book/:id',
+                templateUrl  : '/templates/book/book.tmpl.html',
+                controller   : 'BookDetailsController',
+                controllerAs : 'bookDetailsCtrl'
+            });
+            $urlRouterProvider.otherwise('/');
     });

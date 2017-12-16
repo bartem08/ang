@@ -279,10 +279,10 @@
                     class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                   <li>
-                    <a href="#/book/list">Book list</a>
+                    <a ui-sref="bookList">Book list</a>
                   </li>
                   <li>
-                    <a href="#/book/create">Create book</a>
+                    <a ui-sref="bookCreate">Create book</a>
                   </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -378,7 +378,7 @@
         </div>
 
         <div class="panel-body">
-          <ng-view></ng-view>
+          <ui-view></ui-view>
         </div>
       </div>
     </div>

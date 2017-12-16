@@ -1,3 +1,5 @@
 'use strict';
 
-angular.module('ang', ['ngRoute']);
+angular.module('ang', [
+    'ui.router'
+]);

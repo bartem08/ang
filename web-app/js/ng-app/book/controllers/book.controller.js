@@ -1,10 +1,10 @@
 angular.module('ang').controller('BookController', [
-    '$route',
+    '$state',
     'BookService',
     BookController
 ]);
 
-function BookController($route, BookService) {
+function BookController($state, BookService) {
     var vm = this;
 
     vm.reverse = false;
@@ -28,7 +28,7 @@ function BookController($route, BookService) {
 
     vm.deleteBook = function (id) {
         BookService.deleteBook(id).then(function () {
-            $route.reload();
+            $state.reload();
         })
     }
 }
