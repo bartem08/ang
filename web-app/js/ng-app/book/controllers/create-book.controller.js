@@ -1,11 +1,11 @@
-angular.module('ang').controller('CreateBookController', [
+angular.module('ang').controller('createBookController', [
     '$scope',
     '$location',
-    'BookService',
+    'bookService',
     CreateBookController
 ]);
 
-function CreateBookController($scope, $location, BookService) {
+function CreateBookController($scope, $location, bookService) {
     var vm = this;
 
     vm.MIN_NAME_FIELD_LENGTH = 3;
@@ -20,7 +20,7 @@ function CreateBookController($scope, $location, BookService) {
         $scope.$broadcast('getAuthorID');
         vm.author = { id: $scope.authorId };
 
-        BookService.createBook(vm).then(function () {
+        bookService.createBook(vm).then(function () {
             $location.path('book/list')
         }, function (response) {
             console.log(response.message)

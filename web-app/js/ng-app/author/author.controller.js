@@ -1,17 +1,17 @@
 angular.module('ang').controller('AuthorController', [
     '$scope',
-    'AuthorService',
+    'authorService',
     AuthorController
 ]);
 
-function AuthorController($scope, AuthorService) {
+function AuthorController($scope, authorService) {
     var vm = this;
 
     $scope.$on('getAuthorID', function (event) {
         event.targetScope.authorId = vm.authorId;
     });
 
-    AuthorService.findAllAuthors().then(function (response) {
+    authorService.findAllAuthors().then(function (response) {
         vm.authors = response.data;
     }, function (response) {
         console.log(response.message);

@@ -1,41 +1,34 @@
-angular.module('ang').factory('BookService', [
+angular.module('ang').service('bookService', [
    '$http',
    BookService
 ]);
 
 function BookService($http) {
 
-    function getAllBooks() {
+    this.getAllBooks = function() {
         return $http.get('/books');
-    }
+    };
 
-    function getBookById(id) {
+    this.getBookById = function(id) {
         return $http.get('/books/' + id);
-    }
+    };
     
-    function createBook(bookToCreate) {
-        var bookJson = _createBookObject(bookToCreate);
+    this.createBook = function(bookToCreate) {
+        var bookJson = this._createBookObject(bookToCreate);
 
         return $http.post('/books', bookJson);
-    }
+    };
 
-    function _createBookObject(bookToCreate) {
+    this._createBookObject = function(bookToCreate) {
         return {
             name    : bookToCreate.name,
             genre   : bookToCreate.genre,
             year    : bookToCreate.year,
             author  : bookToCreate.author
         };
-    }
+    };
 
-    function deleteBook(id) {
+    this.deleteBook = function(id) {
         return $http.delete('/books/' + id);
-    }
-
-    return {
-        getAllBooks : getAllBooks,
-        getBookById : getBookById,
-        createBook  : createBook,
-        deleteBook  : deleteBook
-    }
+    };
 }

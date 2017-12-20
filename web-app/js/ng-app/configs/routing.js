@@ -4,19 +4,19 @@ angular.module('ang')
             .state('bookCreate', {
                 url          : '/book/create',
                 templateUrl  : '/templates/book/create-book.tmpl.html',
-                controller   : 'CreateBookController',
+                controller   : 'createBookController',
                 controllerAs : 'createBookCtrl'
             })
             .state('bookList', {
                 url          : '/book/list',
                 templateUrl  : '/templates/book/book-list.tmpl.html',
-                controller   : 'BookController',
+                controller   : 'bookController',
                 controllerAs : 'bookCtrl'
             })
             .state('bookDetails', {
                 url          : '/book/:id',
                 templateUrl  : '/templates/book/book.tmpl.html',
-                controller   : 'BookDetailsController',
+                controller   : 'bookDetailsController',
                 controllerAs : 'bookDetailsCtrl'
             });
             $urlRouterProvider.otherwise('/');

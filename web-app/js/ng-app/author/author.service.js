@@ -1,15 +1,11 @@
-angular.module('ang').factory('AuthorService', [
+angular.module('ang').service('authorService', [
     '$http',
     AuthorService
 ]);
 
 function AuthorService($http) {
 
-    function findAllAuthors() {
+    this.findAllAuthors = function() {
         return $http.get('/authors');
     }
-
-    return {
-        findAllAuthors: findAllAuthors
-    };
 }

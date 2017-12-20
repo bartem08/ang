@@ -1,15 +1,15 @@
-angular.module('ang').controller('BookController', [
+angular.module('ang').controller('bookController', [
     '$state',
-    'BookService',
+    'bookService',
     BookController
 ]);
 
-function BookController($state, BookService) {
+function BookController($state, bookService) {
     var vm = this;
 
     vm.reverse = false;
 
-    BookService.getAllBooks().then(function (response) {
+    bookService.getAllBooks().then(function (response) {
         vm.books = response.data
     }, function (response) {
         console.log(response.message);
@@ -27,7 +27,7 @@ function BookController($state, BookService) {
     };
 
     vm.deleteBook = function (id) {
-        BookService.deleteBook(id).then(function () {
+        bookService.deleteBook(id).then(function () {
             $state.reload();
         })
     }

@@ -1,6 +1,6 @@
-angular.module('ang').directive('angAuthor', AngAuthor);
+angular.module('ang').directive('angAuthorDirective', AngAuthorDirective);
 
-function AngAuthor() {
+function AngAuthorDirective() {
 
     return {
         restrict     : 'E',

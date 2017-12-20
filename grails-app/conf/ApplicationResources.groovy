@@ -43,7 +43,7 @@ modules = {
         resource url: '/js/ng-app/book/controllers/book.controller.js'
         resource url: '/js/ng-app/book/controllers/create-book.controller.js'
         resource url: '/js/ng-app/book/controllers/book-details.controller.js'
-        resource url: '/js/ng-app/validators/past-validator.directive.js'
+        resource url: '/js/ng-app/validators/ang-past-validator.directive.js'
         resource url: '/js/ng-app/common/filters/century.filter.js'
     }
 
@@ -52,6 +52,6 @@ modules = {
 
         resource url: '/js/ng-app/author/author.service.js'
         resource url: '/js/ng-app/author/author.controller.js'
-        resource url: '/js/ng-app/author/author.directive.js'
+        resource url: '/js/ng-app/author/ang-author.directive.js'
     }
 }

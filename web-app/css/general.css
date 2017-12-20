@@ -10,12 +10,16 @@ table .ang-small-column {
     display: flex;
 }
 
-.ang-valid-icon {
+span.ang-valid-icon {
     color: #5cb85c;
     margin: auto;
+    width: 7%;
+    text-align: center;
 }
 
-.ang-invalid-icon {
+p.ang-invalid-icon {
     color: #f0ad4e;
     margin: auto;
+    width: 7%;
+    text-align: center;
 }
