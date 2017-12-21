@@ -376,8 +376,8 @@
             <h1 class="page-header">Dashboard</h1>
           </div>
         </div>
-
         <div class="panel-body">
+          <ang-error-handler-directive></ang-error-handler-directive>
           <ui-view></ui-view>
         </div>
       </div>

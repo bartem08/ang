@@ -6,7 +6,7 @@
       <input required ng-minlength="3" ng-model="createBookCtrl.name"
              name="name"
              class="ang-input form-control"
-             placeholder="{{createBookCtrl.INPUT_PLACEHOLDERS.bookName}}"/>
+             placeholder="{{ ::createBookCtrl.INPUT_PLACEHOLDERS.bookName }}"/>
       <span ng-show="createBookForm.name.$valid"
             class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.name.$invalid"
@@ -22,7 +22,7 @@
              ng-model="createBookCtrl.genre"
              name="genre"
              class="ang-input form-control"
-             placeholder="{{ createBookCtrl.INPUT_PLACEHOLDERS.bookGenre }}"/>
+             placeholder="{{ ::createBookCtrl.INPUT_PLACEHOLDERS.bookGenre }}"/>
       <span ng-show="createBookForm.genre.$valid"
             class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.genre.$invalid"
@@ -37,7 +37,7 @@
              name="year"
              type="number"
              class="ang-input form-control"
-             placeholder="{{ createBookCtrl.INPUT_PLACEHOLDERS.bookYear }}"/>
+             placeholder="{{ ::createBookCtrl.INPUT_PLACEHOLDERS.bookYear }}"/>
       <span ng-show="createBookForm.year.$valid"
             class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
       <p ng-show="createBookForm.year.$invalid"

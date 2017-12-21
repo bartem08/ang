@@ -18,6 +18,9 @@ modules = {
 
         resource url: '/js/ng-app/app.js'
         resource url: '/js/ng-app/configs/routing.js'
+        resource url: '/js/ng-app/configs/error/error-handler.controller.js'
+        resource url: '/js/ng-app/configs/error/ang-error-handler.directive.js'
+        resource url: '/js/ng-app/configs/error/ang-error-handler.interceptor.js'
     }
 
     bootstrap {

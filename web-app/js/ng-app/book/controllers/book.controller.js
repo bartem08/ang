@@ -11,8 +11,6 @@ function BookController($state, bookService) {
 
     bookService.getAllBooks().then(function (response) {
         vm.books = response.data
-    }, function (response) {
-        console.log(response.message);
     });
 
     vm.changeSort = function (field) {

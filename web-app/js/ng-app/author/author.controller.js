@@ -13,7 +13,5 @@ function AuthorController($scope, authorService) {
 
     authorService.findAllAuthors().then(function (response) {
         vm.authors = response.data;
-    }, function (response) {
-        console.log(response.message);
     });
 }

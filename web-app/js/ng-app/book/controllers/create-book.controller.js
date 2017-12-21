@@ -22,8 +22,6 @@ function CreateBookController($scope, $location, bookService) {
 
         bookService.createBook(vm).then(function () {
             $location.path('book/list')
-        }, function (response) {
-            console.log(response.message)
         });
     };
 }
