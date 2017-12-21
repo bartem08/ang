@@ -1,14 +1,14 @@
-angular.module('ang').directive('past', [
-    pastValidator
+angular.module('ang').directive('angPastValidator', [
+    AngPastValidatorDirective
 ]);
 
-function pastValidator() {
+function AngPastValidatorDirective() {
 
     return {
         require : 'ngModel',
         link    : function (scope, elm, attrs, ctrl) {
             ctrl.$validators.past = function (modelValue) {
-                return modelValue <= (new Date().getFullYear());
+                return modelValue <= (new Date()).getFullYear();
             }
         }
     }

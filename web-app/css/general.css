@@ -1,0 +1,25 @@
+.ang-pointer {
+    cursor: pointer;
+}
+
+table .ang-small-column {
+    width: 5%;
+}
+
+.ang-flex {
+    display: flex;
+}
+
+span.ang-valid-icon {
+    color: #5cb85c;
+    margin: auto;
+    width: 7%;
+    text-align: center;
+}
+
+p.ang-invalid-icon {
+    color: #f0ad4e;
+    margin: auto;
+    width: 7%;
+    text-align: center;
+}

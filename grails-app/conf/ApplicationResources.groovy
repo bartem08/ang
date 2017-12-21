@@ -7,8 +7,9 @@ modules = {
         defaultBundle 'core'
 
         resource url: '/js/lib/angular.js', disposition: 'head'
+        resource url: '/css/general.css', disposition: 'head'
         resource url: '/js/lib/angular-cookies.js'
-        resource url: '/js/lib/angular-route.js'
+        resource url: '/js/lib/angular-ui-router.js'
     }
 
     angular {
@@ -16,6 +17,10 @@ modules = {
         defaultBundle 'core'
 
         resource url: '/js/ng-app/app.js'
+        resource url: '/js/ng-app/configs/routing.js'
+        resource url: '/js/ng-app/configs/error/error-handler.controller.js'
+        resource url: '/js/ng-app/configs/error/ang-error-handler.directive.js'
+        resource url: '/js/ng-app/configs/error/ang-error-handler.interceptor.js'
     }
 
     bootstrap {
@@ -37,18 +42,19 @@ modules = {
     book {
         dependsOn 'angular'
 
-        resource url: '/js/ng-app/book/bookService.js'
-        resource url: '/js/ng-app/book/book.controller.js'
-        resource url: '/js/ng-app/book/createBookController.js'
-        resource url: '/js/ng-app/book/bookDetailsController.js'
-        resource url: '/js/ng-app/validators/pastValidator.js'
-        resource url: '/js/ng-app/book/centuryFilter.js'
+        resource url: '/js/ng-app/book/book.service.js'
+        resource url: '/js/ng-app/book/controllers/book.controller.js'
+        resource url: '/js/ng-app/book/controllers/create-book.controller.js'
+        resource url: '/js/ng-app/book/controllers/book-details.controller.js'
+        resource url: '/js/ng-app/validators/ang-past-validator.directive.js'
+        resource url: '/js/ng-app/common/filters/century.filter.js'
     }
 
     author {
         dependsOn 'angular'
 
-        resource url: '/js/ng-app/author/authorService.js'
-        resource url: '/js/ng-app/author/authorController.js'
+        resource url: '/js/ng-app/author/author.service.js'
+        resource url: '/js/ng-app/author/author.controller.js'
+        resource url: '/js/ng-app/author/ang-author.directive.js'
     }
 }

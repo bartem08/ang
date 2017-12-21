@@ -1,0 +1,11 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{ ::bookDetailsCtrl.book.name }}, {{ ::bookDetailsCtrl.book.year }}
+  </div>
+  <div class="panel-body">
+    <p>{{ ::bookDetailsCtrl.book.genre }}, {{ ::bookDetailsCtrl.book.year | century }} century</p>
+  </div>
+  <div class="panel-footer">
+    {{ ::bookDetailsCtrl.book.author.name }}
+  </div>
+</div>

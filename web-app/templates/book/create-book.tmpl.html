@@ -1,0 +1,54 @@
+<form name="createBookForm" ng-submit="createBookCtrl.createNewBook()">
+
+  <div class="form-group">
+    <label>Name:</label>
+    <div class="ang-flex">
+      <input required ng-minlength="3" ng-model="createBookCtrl.name"
+             name="name"
+             class="ang-input form-control"
+             placeholder="{{ ::createBookCtrl.INPUT_PLACEHOLDERS.bookName }}"/>
+      <span ng-show="createBookForm.name.$valid"
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
+      <p ng-show="createBookForm.name.$invalid"
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Genre:</label>
+    <div class="ang-flex">
+      <input required
+             ng-minlength="createBookCtrl.MIN_NAME_FIELD_LENGTH"
+             ng-model="createBookCtrl.genre"
+             name="genre"
+             class="ang-input form-control"
+             placeholder="{{ ::createBookCtrl.INPUT_PLACEHOLDERS.bookGenre }}"/>
+      <span ng-show="createBookForm.genre.$valid"
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
+      <p ng-show="createBookForm.genre.$invalid"
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Year:</label>
+    <div class="ang-flex">
+      <input required ang-past-validator ng-model="createBookCtrl.year"
+             name="year"
+             type="number"
+             class="ang-input form-control"
+             placeholder="{{ ::createBookCtrl.INPUT_PLACEHOLDERS.bookYear }}"/>
+      <span ng-show="createBookForm.year.$valid"
+            class="pull-right glyphicon glyphicon-ok ang-valid-icon"></span>
+      <p ng-show="createBookForm.year.$invalid"
+         class="pull-right fa fa-warning ang-invalid-icon"></p>
+    </div>
+
+  </div>
+  <ang-author-directive></ang-author-directive>
+  <button ng-disabled="createBookForm.$invalid"
+          type="submit"
+          class="ang-input btn btn-primary btn-lg btn-block">Add book
+  </button>
+
+</form>

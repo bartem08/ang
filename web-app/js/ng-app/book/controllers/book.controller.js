@@ -1,11 +1,12 @@
-angular.module('ang').controller('BookController', [
-    '$route',
+angular.module('ang').controller('bookController', [
+    '$state',
     'bookService',
     BookController
 ]);
 
-function BookController($route, bookService) {
+function BookController($state, bookService) {
     var vm = this;
+
     vm.reverse = false;
 
     bookService.getAllBooks().then(function (response) {
@@ -20,12 +21,12 @@ function BookController($route, bookService) {
     };
 
     vm.shouldOrderBy = function (field) {
-        return field === vm.sort
+        return field === vm.sort;
     };
 
     vm.deleteBook = function (id) {
         bookService.deleteBook(id).then(function () {
-            $route.reload();
+            $state.reload();
         })
     }
 }
