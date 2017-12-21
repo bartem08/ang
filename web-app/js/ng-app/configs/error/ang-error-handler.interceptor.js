@@ -29,7 +29,7 @@ function AngErrorHandlerInterceptor($q, $rootScope) {
     return {
 
         'responseError': function(response) {
-            $rootScope.$emit('showErrorMessage', getMessage(response));
+            $rootScope.$broadcast('showErrorMessage', getMessage(response));
             return $q.reject(response);
         }
     };

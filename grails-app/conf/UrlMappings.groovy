@@ -31,5 +31,7 @@ class UrlMappings {
         "/authors/$id"(controller: 'author') {
             action = [GET: 'getById']
         }
+
+        "500"(controller: 'error', action: 'handleInternalError')
 	}
 }

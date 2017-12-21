@@ -4,11 +4,16 @@ angular.module('ang').controller('errorController', [
 ]);
 
 function ErrorController($scope) {
+    var vm = this;
 
-    $scope.notifyError = false;
+    vm.notifyError = false;
 
     $scope.$on('showErrorMessage', function (event, args) {
-        $scope.notifyError = true;
-        $scope.errorMessage = args;
+        vm.notifyError = true;
+        vm.errorMessage = args;
     });
+
+    vm.closeBlock = function () {
+        vm.notifyError = false;
+    }
 }
