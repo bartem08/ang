@@ -9,6 +9,11 @@ class Book {
 
     static constraints = {}
 
+    static mapping = {
+        table 'books'
+        version false
+    }
+
     Map<String, ?> toMap() {
         [
                 id      : id,

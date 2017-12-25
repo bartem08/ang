@@ -32,6 +32,21 @@ class UrlMappings {
             action = [GET: 'getById']
         }
 
+        "/dataSources"(controller: 'dataSource') {
+            action = [
+                    GET: 'getAllDataSources',
+                    POST: 'createDataSource'
+            ]
+        }
+
+        "/dataSources/$name"(controller: 'dataSource') {
+            action = [
+                    GET: 'getDataSource',
+                    PUT: 'updateDataSource',
+                    DELETE: 'deleteDataSource'
+            ]
+        }
+
         "500"(controller: 'error', action: 'handleInternalError')
 	}
 }

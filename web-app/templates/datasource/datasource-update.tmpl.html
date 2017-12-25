@@ -1,0 +1,39 @@
+<form name="dataSourceForm" ng-submit="dataSourceUpdateCtrl.update()">
+
+  <div class="form-group">
+    <label>URL</label>
+    <div class="ang-flex">
+      <input required
+             ng-model="dataSourceUpdateCtrl.dataSource.url"
+             name="url"
+             value="{{ dataSourceUpdateCtrl.dataSource.url }}"
+             class="ang-input form-control"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Username</label>
+    <div class="ang-flex">
+      <input required
+             ng-model="dataSourceUpdateCtrl.dataSource.username"
+             name="username"
+             value="{{ dataSourceUpdateCtrl.dataSource.username }}"
+             class="ang-input form-control"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <div class="ang-flex">
+      <input required
+             ng-model="dataSourceUpdateCtrl.dataSource.password"
+             name="password"
+             value="{{ dataSourceUpdateCtrl.dataSource.password }}"
+             class="ang-input form-control"/>
+    </div>
+  </div>
+
+  <button type="submit"
+          ng-disabled="dataSourceForm.$invalid"
+          class="btn btn-warning">Update</button>
+</form>

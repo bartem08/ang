@@ -63,6 +63,7 @@ grails.project.dependency.resolution = {
         compile ':spring-security-core:2.0.0'
         compile "org.grails.plugins:spring-security-rest:1.5.4"
         runtime ':resources:1.2.14'
+        compile "org.grails.plugins:mysql-connectorj:5.1.22.1"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.17"

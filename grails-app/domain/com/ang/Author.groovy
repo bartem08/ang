@@ -9,6 +9,11 @@ class Author {
 
     static constraints = {}
 
+    static mapping = {
+        table 'authors'
+        version false
+    }
+
     String getFullName() {
         "$name $surname"
     }

@@ -57,4 +57,16 @@ modules = {
         resource url: '/js/ng-app/author/author.controller.js'
         resource url: '/js/ng-app/author/ang-author.directive.js'
     }
+
+    dataSource {
+
+        dependsOn 'angular'
+
+        resource url: '/js/ng-app/datasource/datasource.service.js'
+        resource url: '/js/ng-app/datasource/controllers/datasource.controller.js'
+        resource url: '/js/ng-app/datasource/controllers/datasource-update.controller.js'
+        resource url: '/js/ng-app/datasource/directives/ang-datasource-update.directive.js'
+        resource url: '/js/ng-app/datasource/controllers/datasource-delete.controller.js'
+        resource url: '/js/ng-app/datasource/controllers/datasource-create.controller.js'
+    }
 }

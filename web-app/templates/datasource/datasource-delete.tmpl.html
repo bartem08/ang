@@ -1,0 +1,15 @@
+<form name="dataSourceDeleteForm" ng-submit="dataSourceDeleteCtrl.delete()">
+  <div class="form-group">
+    <label>Data source to delete</label>
+    <select required
+            class="form-control"
+            ng-model="dataSourceDeleteCtrl.dataSourceToDelete">
+      <option ng-repeat="ds in dataSourceDeleteCtrl.dataSources"
+              value="{{ ds }}">{{ ds }}
+    </select>
+  </div>
+  <button type="submit"
+          ng-disabled="dataSourceDeleteForm.$invalid"
+          class="btn btn-danger">Delete
+  </button>
+</form>

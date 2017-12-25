@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="layout" content="main">
     <title>Test angular app</title>
-    <r:require modules="bootstrap, book, author"/>
+    <r:require modules="bootstrap, book, author, dataSource"/>
     <r:layoutResources/>
   </head>
 
@@ -288,7 +288,19 @@
                 <!-- /.nav-second-level -->
               </li>
               <li>
-                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                <a href="#"><i class="fa fa-table fa-fw"></i>DataSources
+                  <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a ui-sref="dataSourceList">Data sources list</a>
+                  </li>
+                  <li>
+                    <a ui-sref="dataSourceCreate">Create data source</a>
+                  </li>
+                  <li>
+                    <a ui-sref="dataSourceDelete">Delete data source</a>
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
